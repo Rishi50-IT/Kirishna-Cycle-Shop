@@ -11,8 +11,8 @@ from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from motor.motor_asyncio import AsyncIOMotorClient
 
 client = AsyncIOMotorClient(os.environ["mongodb+srv://Rishi_Munda:Rahul124%40@cluster0.dod06ln.mongodb.net/?appName=Cluster0"])
-db = client[os.environ["DB_NAME"]]
-JWT_SECRET = os.environ["JWT_SECRET"]
+db = client[os.environ["firstdb"]]
+JWT_SECRET = os.environ["replace-with-a-long-random-string"]
 JWT_DAYS = 7
 
 
