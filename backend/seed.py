@@ -54,10 +54,10 @@ def slugify(s: str) -> str:
 
 
 async def seed():
-    email = os.environ["rishimunda50@gmail.com"].lower()
+    email = os.environ["ADMIN_EMAIL"].lower()
     if not await db.admins.find_one({"email": email}):
         await db.admins.insert_one({"id": new_id(), "email": email, "name": "Shop Owner",
-                                    "password_hash": hash_pw(os.environ["Rishimunda50@2026"]), "created_at": now_iso()})
+                                    "password_hash": hash_pw(os.environ["ADMIN_PASSWORD"]), "created_at": now_iso()})
     if not await db.settings.find_one({"id": "shop"}):
         await db.settings.insert_one({
             "id": "shop", "shop_name": "Kirishna Cycle Shop", "phone": "9508668053", "whatsapp": "9508668053",
