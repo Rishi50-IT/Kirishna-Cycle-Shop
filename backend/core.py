@@ -10,7 +10,7 @@ from fastapi import Depends, HTTPException, Request
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from motor.motor_asyncio import AsyncIOMotorClient
 
-client = AsyncIOMotorClient(os.environ["mongodb+srv://rishimunda50_db_user:taZM9vn6W8pjxwzh@cluster0.xxqc6tv.mongodb.net/"])
+client = AsyncIOMotorClient(os.environ["MONGO_URL"])
 db = client[os.environ["DB_NAME"]]
 JWT_SECRET = os.environ["JWT_SECRET"]
 JWT_DAYS = 7
